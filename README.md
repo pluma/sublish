@@ -1,6 +1,6 @@
 # Synopsis
 
-Minimalist Publish/Subscribe.
+Minimalist publish/subscribe.
 
 # Install
 
@@ -13,7 +13,7 @@ npm install sublish
 ## Browser (with component)
 
 ```sh
-component install sublish
+component install pluma/sublish
 ```
 
 ## Browser (with bower)
