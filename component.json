@@ -2,9 +2,20 @@
   "name": "sublish",
   "repo": "pluma/sublish",
   "description": "Minimalist publish/subscribe.",
+  "keywords": [
+    "pubsub",
+    "publish",
+    "subscribe",
+    "pubsub"
+  ],
   "version": "0.1.0",
-  "keywords": ["pubsub", "publish", "subscribe", "events"],
   "scripts": ["lib/sublish.js"],
   "main": "lib/sublish.js",
+  "ignore": [
+    "**/.*",
+    "build",
+    "components",
+    "node_modules",
+  ],
   "license": "MIT"
 }
