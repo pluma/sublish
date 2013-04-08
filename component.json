@@ -1,0 +1,10 @@
+{
+  "name": "sublish",
+  "repo": "pluma/sublish",
+  "description": "Minimalist publish/subscribe.",
+  "version": "0.1.0",
+  "keywords": ["pubsub", "publish", "subscribe", "events"],
+  "scripts": ["lib/sublish.js"],
+  "main": "lib/sublish.js",
+  "license": "MIT"
+}
