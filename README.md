@@ -1,6 +1,6 @@
 # Synopsis
 
-Minimalist publish/subscribe.
+Minimalist lightweight (~0.6 kB minified and <0.4 kB gzipped) publish/subscribe.
 
 # Install
 
