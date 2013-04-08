@@ -34,6 +34,15 @@ You can load the `sublish` module with your favourite CommonJS or AMD module loa
 
 If you are using an AMD loader but want to include the `sublish` global, make sure to place the script tag before the AMD loader.
 
+## From GitHub
+
+```sh
+git clone https://github.com/pluma/sublish.git
+cd sublish
+npm install
+make && make min
+```
+
 # Basic usage example
 
 ```javascript
