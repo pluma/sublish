@@ -15,7 +15,7 @@
     "**/.*",
     "build",
     "components",
-    "node_modules",
+    "node_modules"
   ],
   "license": "MIT"
 }
