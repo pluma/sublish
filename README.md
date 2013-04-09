@@ -1,36 +1,57 @@
 # Synopsis
 
-Minimalist lightweight (~0.5 kB minified and ~0.3 kB gzipped) publish/subscribe.
+**sublish** is a minimalist lightweight (~0.5 kB minified and ~0.3 kB gzipped) implementation of publish/subscribe.
 
 # Install
 
 ## Node.js
 
+### With NPM
+
 ```sh
 npm install sublish
 ```
 
-## Browser (with component)
+### From source
+
+```sh
+git clone https://github.com/pluma/sublish.git
+cd sublish
+npm install
+make && make dist
+```
+
+## Browser
+
+### With component
 
 ```sh
 component install pluma/sublish
 ```
 
-## Browser (with bower)
+[Learn more about component](https://github.com/component/component).
+
+### With bower
 
 ```sh
 bower install sublish
 ```
 
-## Browser (with a CommonJS module loader)
+[Learn more about bower](https://github.com/twitter/bower).
+
+### With a CommonJS module loader
 
 Download the [latest minified CommonJS release](https://github.com/pluma/sublish/dist/sublish.min.js) and add it to your project.
 
-## Browser (with an AMD module loader)
+[Learn more about CommonJS modules](http://wiki.commonjs.org/wiki/Modules/1.1).
+
+### With an AMD module loader
 
 Download the [latest minified AMD release](https://github.com/pluma/sublish/dist/sublish.amd.min.js) and add it to your project.
 
-## Browser (standalone)
+[Learn more about AMD modules](http://requirejs.org/docs/whyamd.html).
+
+### As a standalone library
 
 Download the [latest minified standalone release](https://github.com/pluma/sublish/dist/sublish.globals.min.js) and add it to your project.
 
@@ -39,15 +60,6 @@ Download the [latest minified standalone release](https://github.com/pluma/subli
 ```
 
 This makes the `sublish` module available in the global namespace.
-
-## From GitHub
-
-```sh
-git clone https://github.com/pluma/sublish.git
-cd sublish
-npm install
-make && make min
-```
 
 # Basic usage example
 
