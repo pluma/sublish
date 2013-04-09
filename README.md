@@ -2,6 +2,8 @@
 
 **sublish** is a minimalist lightweight (~0.5 kB minified and ~0.3 kB gzipped) implementation of publish/subscribe.
 
+[![Build Status](https://travis-ci.org/pluma/sublish.png)](https://travis-ci.org/pluma/sublish)
+
 # Install
 
 ## Node.js
