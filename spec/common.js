@@ -3,4 +3,4 @@
  */
 /*global expect:true, sublish:true */
 expect = require('expect.js');
-sublish = require('../lib/sublish.js');
+sublish = require('../src/sublish.js');

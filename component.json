@@ -8,15 +8,15 @@
     "subscribe",
     "pubsub"
   ],
-  "version": "0.2.0",
+  "version": "0.3.0",
   "dependencies": {},
   "devDependencies": {
     "mocha": "1.7.x",
     "expect": "0.2.x",
     "uglify-js": "1.3.x"
   },
-  "scripts": ["lib/sublish.js"],
-  "main": "./lib/sublish.js",
+  "scripts": ["dist/sublish.js"],
+  "main": "./dist/sublish.js",
   "ignore": [
     "**/.*",
     "build",

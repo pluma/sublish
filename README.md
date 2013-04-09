@@ -1,6 +1,6 @@
 # Synopsis
 
-Minimalist lightweight (~0.6 kB minified and <0.4 kB gzipped) publish/subscribe.
+Minimalist lightweight (~0.5 kB minified and ~0.3 kB gzipped) publish/subscribe.
 
 # Install
 
@@ -22,17 +22,23 @@ component install pluma/sublish
 bower install sublish
 ```
 
+## Browser (with a CommonJS module loader)
+
+Download the [latest minified CommonJS release](https://github.com/pluma/sublish/dist/sublish.min.js) and add it to your project.
+
+## Browser (with an AMD module loader)
+
+Download the [latest minified AMD release](https://github.com/pluma/sublish/dist/sublish.amd.min.js) and add it to your project.
+
 ## Browser (standalone)
 
-Download the [latest minified release](https://github.com/pluma/sublish/lib/sublish.min.js) and add it to your project.
-
-You can load the `sublish` module with your favourite CommonJS or AMD module loader or include the `sublish` global directly with a script tag:
+Download the [latest minified standalone release](https://github.com/pluma/sublish/dist/sublish.globals.min.js) and add it to your project.
 
 ```html
-<script src="/your/js/path/sublish.min.js"></script>
+<script src="/your/js/path/sublish.globals.min.js"></script>
 ```
 
-If you are using an AMD loader but want to include the `sublish` global, make sure to place the script tag before the AMD loader.
+This makes the `sublish` module available in the global namespace.
 
 ## From GitHub
 
