@@ -1,4 +1,4 @@
-function PubSub(obj) {
+function PubSub() {
     this._subscribers = [];
 }
 PubSub.prototype = {
