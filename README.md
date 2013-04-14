@@ -1,6 +1,6 @@
 # Synopsis
 
-**sublish** is a minimalist lightweight (~0.5 kB minified and ~0.3 kB gzipped) implementation of publish/subscribe.
+**sublish** is a minimalist lightweight (~0.4 kB minified and ~0.3 kB gzipped) implementation of publish/subscribe.
 
 [![Build Status](https://travis-ci.org/pluma/sublish.png?branch=master)](https://travis-ci.org/pluma/sublish)
 
@@ -77,7 +77,7 @@ myPubSub.publish('something amazing');
 // -> 'myPubSub says: "something amazing"'
 ```
 
-# Mixin usage example
+# Mixin usage example with [mixed](https://github.com/pluma/mixed)
 
 ```javascript
 function Person(name) {
@@ -90,7 +90,7 @@ Person.prototype = {
 };
 
 var joe = new Person('Joe');
-PubSub(joe);
+mixed.mixin(sublish.PubSub, joe);
 
 joe.subscribe(function(message) {
     console.log(message);
@@ -109,15 +109,11 @@ Creates a new PubSub instance.
 
 **NOTE:** This is a constructor. Use of the `new` keyword is therefore not optional.
 
-## PubSub(obj)
-
-Applies `PubSub` to the given obj as a mixin.
-
 ## PubSub#subscribe(callback:Function)
 
 Adds the given callback function to this object's list of subscribers.
 
-**NOTE:** The callback will be called with the PubSub instance as its context. If you want to preserve the callback's original context, use `Function#bind` or (in legacy browsers) wrap the callback in a closure.
+**NOTE**: The callback will be called with the PubSub instance as its context. If you want to preserve the callback's original context, use `Function#bind` or (in legacy browsers) wrap the callback in a closure.
 
 ## PubSub#unsubscribe(callback:Function)
 

@@ -1,6 +1,6 @@
 {
   "name": "sublish",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": "Alan Plum <me@pluma.io>",
   "description": "Minimalist publish/subscribe.",
   "repository": {
