@@ -1,5 +1,5 @@
-/*! sublish 0.3.0 Copyright (c) 2013 Alan Plum. MIT licensed. */
-function PubSub(obj) {
+/*! sublish 0.4.0 Copyright (c) 2013 Alan Plum. MIT licensed. */
+function PubSub() {
     this._subscribers = [];
 }
 PubSub.prototype = {
