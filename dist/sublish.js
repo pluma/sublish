@@ -15,9 +15,9 @@ PubSub.prototype = {
     },
     publish: function() {
         var args = Array.prototype.slice.call(arguments, 0);
-        this._subscribers.forEach(function(fn) {
-            fn.apply(this, args);
-        }.bind(this));
+        for (var i = 0; i < this._subscribers.length; i++) {
+            this._subscribers[i].apply(this, args);
+        }
     }
 };
 exports.PubSub = PubSub; 
