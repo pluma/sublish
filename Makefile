@@ -4,7 +4,7 @@ test:
 	@./node_modules/.bin/mocha \
 		--growl \
 		--reporter spec \
-		spec/*.spec.js
+		spec/*.js
 
 clean:
 	@rm -rf dist
