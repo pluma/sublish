@@ -1,4 +1,4 @@
-/*global describe, it, expect, sublish */
+/*global describe, it */
 var expect = require('expect.js'),
     sublish = require('../');
 describe('PubSub', function() {
