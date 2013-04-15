@@ -2,6 +2,8 @@
 
 **sublish** is a minimalist lightweight (~0.4 kB minified and ~0.3 kB gzipped) implementation of publish/subscribe.
 
+[![browser support](https://ci.testling.com/pluma/sublish.png)](https://ci.testling.com/pluma/sublish)
+
 [![Build Status](https://travis-ci.org/pluma/sublish.png?branch=master)](https://travis-ci.org/pluma/sublish)
 
 # Install
