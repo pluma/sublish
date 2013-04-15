@@ -1,4 +1,4 @@
-/*! sublish 0.4.1 Copyright (c) 2013 Alan Plum. MIT licensed. */
+/*! sublish 0.4.2 Copyright (c) 2013 Alan Plum. MIT licensed. */
 define(function(require, exports) {
 function PubSub() {
     this._subscribers = [];
@@ -8,11 +8,13 @@ PubSub.prototype = {
         this._subscribers.push(callback);
     },
     unsubscribe: function(callback) {
-        var i = this._subscribers.indexOf(callback);
-        if (~i) {
-            this._subscribers.splice(i, 1);
+        for (var i = 0; i < this._subscribers.length; i++) {
+            if (this._subscribers[i] === callback) {
+                this._subscribers.splice(i, 1);
+                return true;
+            }
         }
-        return !!~i;
+        return false;
     },
     publish: function() {
         var args = Array.prototype.slice.call(arguments, 0);
