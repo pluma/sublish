@@ -1,6 +1,6 @@
 # Synopsis
 
-**sublish** is a minimalist lightweight (~0.4 kB minified and ~0.3 kB gzipped) implementation of publish/subscribe.
+**sublish** is a minimalist lightweight (482 Bytes minified and 270 Bytes gzipped) implementation of publish/subscribe.
 
 [![browser support](https://ci.testling.com/pluma/sublish.png)](https://ci.testling.com/pluma/sublish)
 
