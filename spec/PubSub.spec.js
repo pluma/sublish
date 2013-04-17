@@ -1,6 +1,7 @@
-/*global describe, it */
+/*global describe, it, beforeEach */
 var expect = require('expect.js'),
     sublish = require('../');
+
 describe('PubSub', function() {
   var PubSub = sublish.PubSub;
   it('remembers subscribers', function() {

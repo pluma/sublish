@@ -21,4 +21,4 @@ PubSub.prototype = {
         }
     }
 };
-exports.PubSub = PubSub; 
+exports.PubSub = PubSub;
