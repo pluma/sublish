@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>sublish by pluma</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>sublish</h1>
+        <p>Minimalist publish/subscribe.</p>
+        <p class="view"><a href="https://github.com/pluma/sublish">View the Project on GitHub <small>pluma/sublish</small></a></p>
+        <ul>
+          <li><a href="https://github.com/pluma/sublish/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/pluma/sublish/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/pluma/sublish">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Synopsis</h1>
+
+<p><strong>sublish</strong> is a minimalist lightweight (482 Bytes minified and 270 Bytes gzipped) implementation of publish/subscribe.</p>
+
+<p><a href="https://ci.testling.com/pluma/sublish"><img src="https://ci.testling.com/pluma/sublish.png" alt="browser support"></a></p>
+
+<p><a href="https://travis-ci.org/pluma/sublish"><img src="https://travis-ci.org/pluma/sublish.png?branch=master" alt="Build Status"></a></p>
+
+<h1>Install</h1>
+
+<h2>Node.js</h2>
+
+<h3>With NPM</h3>
+
+<div class="highlight"><pre>npm install sublish
+</pre></div>
+
+<h3>From source</h3>
+
+<div class="highlight"><pre>git clone https://github.com/pluma/sublish.git
+<span class="nb">cd </span>sublish
+npm install
+make <span class="o">&amp;&amp;</span> make dist
+</pre></div>
+
+<h2>Browser</h2>
+
+<h3>With component</h3>
+
+<div class="highlight"><pre>component install pluma/sublish
+</pre></div>
+
+<p><a href="https://github.com/component/component">Learn more about component</a>.</p>
+
+<h3>With bower</h3>
+
+<div class="highlight"><pre>bower install sublish
+</pre></div>
+
+<p><a href="https://github.com/twitter/bower">Learn more about bower</a>.</p>
+
+<h3>With a CommonJS module loader</h3>
+
+<p>Download the <a href="https://raw.github.com/pluma/sublish/master/dist/sublish.min.js">latest minified CommonJS release</a> and add it to your project.</p>
+
+<p><a href="http://wiki.commonjs.org/wiki/Modules/1.1">Learn more about CommonJS modules</a>.</p>
+
+<h3>With an AMD module loader</h3>
+
+<p>Download the <a href="https://raw.github.com/pluma/sublish/master/dist/sublish.amd.min.js">latest minified AMD release</a> and add it to your project.</p>
+
+<p><a href="http://requirejs.org/docs/whyamd.html">Learn more about AMD modules</a>.</p>
+
+<h3>As a standalone library</h3>
+
+<p>Download the <a href="https://raw.github.com/pluma/sublish/master/dist/sublish.globals.min.js">latest minified standalone release</a> and add it to your project.</p>
+
+<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/your/js/path/sublish.globals.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<p>This makes the <code>sublish</code> module available in the global namespace.</p>
+
+<h1>Basic usage example</h1>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">myPubSub</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sublish</span><span class="p">.</span><span class="nx">PubSub</span><span class="p">();</span>
+
+<span class="nx">myPubSub</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'myPubSub says: "'</span> <span class="o">+</span> <span class="nx">message</span> <span class="o">+</span> <span class="s1">'"'</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// elsewhere</span>
+<span class="nx">myPubSub</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="s1">'something amazing'</span><span class="p">);</span>
+<span class="c1">// -&gt; 'myPubSub says: "something amazing"'</span>
+</pre></div>
+
+<h1>Mixin usage example with <a href="https://github.com/pluma/mixed">mixed</a>
+</h1>
+
+<div class="highlight"><pre><span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">say</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">' says: "'</span> <span class="o">+</span> <span class="nx">message</span> <span class="o">+</span> <span class="s1">'"'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">joe</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s1">'Joe'</span><span class="p">);</span>
+<span class="nx">mixed</span><span class="p">.</span><span class="nx">mixin</span><span class="p">(</span><span class="nx">sublish</span><span class="p">.</span><span class="nx">PubSub</span><span class="p">,</span> <span class="nx">joe</span><span class="p">);</span>
+
+<span class="nx">joe</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// elsewhere</span>
+<span class="nx">joe</span><span class="p">.</span><span class="nx">say</span><span class="p">(</span><span class="s1">'Hello there!'</span><span class="p">);</span>
+<span class="c1">// -&gt; 'Joe says: "Hello there!"</span>
+</pre></div>
+
+<h1>API</h1>
+
+<h2>new PubSub()</h2>
+
+<p>Creates a new PubSub instance.</p>
+
+<p><strong>NOTE:</strong> This is a constructor. Use of the <code>new</code> keyword is therefore not optional.</p>
+
+<h2>PubSub#subscribe(callback:Function)</h2>
+
+<p>Adds the given callback function to this object's list of subscribers.</p>
+
+<p><strong>NOTE</strong>: The callback will be called with the PubSub instance as its context. If you want to preserve the callback's original context, use <code>Function#bind</code> or (in legacy browsers) wrap the callback in a closure.</p>
+
+<h2>PubSub#unsubscribe(callback:Function)</h2>
+
+<p>Removes the given callback function from this object's list of subscribers.</p>
+
+<h2>PubSub#publish(args…)</h2>
+
+<p>Publishes the given arguments as a message. Every callback function in this object's list of subscribers will be called sequentially with the given messages as its arguments.</p>
+
+<h1>License</h1>
+
+<p>The MIT/Expat license.</p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/pluma">pluma</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
