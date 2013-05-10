@@ -4,7 +4,7 @@
 
 [![browser support](https://ci.testling.com/pluma/sublish.png)](https://ci.testling.com/pluma/sublish)
 
-[![Build Status](https://travis-ci.org/pluma/sublish.png?branch=master)](https://travis-ci.org/pluma/sublish)
+[![Build Status](https://travis-ci.org/pluma/sublish.png?branch=master)](https://travis-ci.org/pluma/sublish) [![NPM version](https://badge.fury.io/js/sublish.png)](http://badge.fury.io/js/sublish)
 
 # Install
 
