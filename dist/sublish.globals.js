@@ -1,4 +1,4 @@
-/*! sublish 0.4.2 Copyright (c) 2013 Alan Plum. MIT licensed. */
+/*! sublish 0.4.3 Copyright (c) 2013 Alan Plum. MIT licensed. @preserve */
 (function(root){var require=function(key){return root[key];},exports=(root.sublish={});
 function PubSub() {
     this._subscribers = [];

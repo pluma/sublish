@@ -1,16 +1,16 @@
-LICENSE_COMMENT="/*! sublish 0.4.2 Copyright (c) 2013 Alan Plum. MIT licensed. */"
+LICENSE_COMMENT="/*! sublish 0.4.3 Copyright (c) 2013 Alan Plum. MIT licensed. @preserve */"
 
 test:
 	@./node_modules/.bin/mocha \
 		--growl \
 		--reporter spec \
-		spec/*.js
+		spec/*.spec.js
 
 clean:
 	@rm -rf dist
 
 dist/vendor: clean
-	@mkdir -p dist/vendor
+	@mkdir -p dist
 
 dist/sublish.js: dist/vendor
 	@echo $(LICENSE_COMMENT) > dist/sublish.js
@@ -28,16 +28,17 @@ dist/sublish.amd.js: dist/vendor
 	@echo $(LICENSE_COMMENT) > dist/sublish.amd.js
 	@echo "define(function(require, exports) {" >> dist/sublish.amd.js
 	@cat src/sublish.js >> dist/sublish.amd.js
-	@echo "});" >> dist/sublish.amd.js
+	@echo "return exports;\
+	});" >> dist/sublish.amd.js
 
 dist/sublish.min.js: dist/sublish.js
-	@./node_modules/.bin/uglifyjs dist/sublish.js > dist/sublish.min.js
+	@./node_modules/.bin/uglifyjs dist/sublish.js --comments -m > dist/sublish.min.js
 
 dist/sublish.globals.min.js: dist/sublish.globals.js
-	@./node_modules/.bin/uglifyjs dist/sublish.globals.js > dist/sublish.globals.min.js
+	@./node_modules/.bin/uglifyjs dist/sublish.globals.js --comments -m > dist/sublish.globals.min.js
 
 dist/sublish.amd.min.js: dist/sublish.amd.js
-	@./node_modules/.bin/uglifyjs dist/sublish.amd.js > dist/sublish.amd.min.js
+	@./node_modules/.bin/uglifyjs dist/sublish.amd.js --comments > dist/sublish.amd.min.js
 
 dist: dist/sublish.min.js dist/sublish.globals.min.js dist/sublish.amd.min.js
 
