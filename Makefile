@@ -1,4 +1,4 @@
-LICENSE_COMMENT="/*! sublish 0.4.3 Copyright (c) 2013 Alan Plum. MIT licensed. @preserve */"
+LICENSE_COMMENT="/*! sublish 0.4.4 Copyright (c) 2013 Alan Plum. MIT licensed. @preserve */"
 
 test:
 	@./node_modules/.bin/mocha \
