@@ -1,8 +1,12 @@
 {
   "name": "sublish",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "author": "Alan Plum <me@pluma.io>",
   "description": "Minimalist publish/subscribe.",
+  "licenses": {
+    "type": "UNLICENSE",
+    "url": "https://github.com/pluma/sublish/blob/master/UNLICENSE"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/pluma/sublish.git"
@@ -15,12 +19,11 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "mocha": "1.9.x",
-    "expect.js": "0.2.x",
-    "uglify-js": "2.3.x",
-    "jshint": "2.0.x"
+    "mocha": "~1.16",
+    "expect.js": "~0.2",
+    "uglify-js": "~2.4",
+    "jshint": "~2.4"
   },
-  "license": "MIT",
   "main": "./dist/sublish.js",
   "scripts": {
     "test": "make test"

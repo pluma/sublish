@@ -125,6 +125,6 @@ Removes the given callback function from this object's list of subscribers.
 
 Publishes the given arguments as a message. Every callback function in this object's list of subscribers will be called sequentially with the given messages as its arguments.
 
-# License
+# Unlicense
 
-The MIT/Expat license.
+This is free and unencumbered public domain software. For more information, see http://unlicense.org/ or the accompanying [UNLICENSE](https://github.com/pluma/sublish/blob/master/UNLICENSE) file.

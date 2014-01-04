@@ -1,4 +1,4 @@
-LICENSE_COMMENT="/*! sublish 0.4.4 Copyright (c) 2013 Alan Plum. MIT licensed. @preserve */"
+LICENSE_COMMENT="/*! sublish 0.4.5 Original author Alan Plum <me@pluma.io>. Released into the Public Domain under the UNLICENSE. @preserve */"
 
 test:
 	@./node_modules/.bin/mocha \
