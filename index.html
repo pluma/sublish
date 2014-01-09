@@ -1,97 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>sublish by pluma</title>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="sublish : minimalist publish/subscribe" />
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <title>sublish</title>
   </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>sublish</h1>
-        <p>Minimalist publish/subscribe.</p>
-        <p class="view"><a href="https://github.com/pluma/sublish">View the Project on GitHub <small>pluma/sublish</small></a></p>
-        <ul>
-          <li><a href="https://github.com/pluma/sublish/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/pluma/sublish/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/pluma/sublish">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>Synopsis</h1>
 
-<p><strong>sublish</strong> is a minimalist lightweight (482 Bytes minified and 270 Bytes gzipped) implementation of publish/subscribe.</p>
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/pluma/sublish">View on GitHub</a>
+
+          <h1 id="project_title">sublish</h1>
+          <h2 id="project_tagline">minimalist publish/subscribe</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/pluma/sublish/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/pluma/sublish/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="synopsis" class="anchor" href="#synopsis"><span class="octicon octicon-link"></span></a>Synopsis</h1>
+
+<p><strong>sublish</strong> is a minimalist lightweight (504 Bytes minified and 297 Bytes gzipped) implementation of publish/subscribe.</p>
 
 <p><a href="https://ci.testling.com/pluma/sublish"><img src="https://ci.testling.com/pluma/sublish.png" alt="browser support"></a></p>
 
-<p><a href="https://travis-ci.org/pluma/sublish"><img src="https://travis-ci.org/pluma/sublish.png?branch=master" alt="Build Status"></a></p>
+<p><a href="https://travis-ci.org/pluma/sublish"><img src="https://travis-ci.org/pluma/sublish.png?branch=master" alt="Build Status"></a> <a href="http://badge.fury.io/js/sublish"><img src="https://badge.fury.io/js/sublish.png" alt="NPM version"></a></p>
 
-<h1>Install</h1>
+<h1>
+<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h1>
 
-<h2>Node.js</h2>
+<h2>
+<a name="nodejs" class="anchor" href="#nodejs"><span class="octicon octicon-link"></span></a>Node.js</h2>
 
-<h3>With NPM</h3>
+<h3>
+<a name="with-npm" class="anchor" href="#with-npm"><span class="octicon octicon-link"></span></a>With NPM</h3>
 
-<div class="highlight"><pre>npm install sublish
+<div class="highlight highlight-sh"><pre>npm install sublish
 </pre></div>
 
-<h3>From source</h3>
+<h3>
+<a name="from-source" class="anchor" href="#from-source"><span class="octicon octicon-link"></span></a>From source</h3>
 
-<div class="highlight"><pre>git clone https://github.com/pluma/sublish.git
+<div class="highlight highlight-sh"><pre>git clone https://github.com/pluma/sublish.git
 <span class="nb">cd </span>sublish
 npm install
 make <span class="o">&amp;&amp;</span> make dist
 </pre></div>
 
-<h2>Browser</h2>
+<h2>
+<a name="browser" class="anchor" href="#browser"><span class="octicon octicon-link"></span></a>Browser</h2>
 
-<h3>With component</h3>
+<h3>
+<a name="with-component" class="anchor" href="#with-component"><span class="octicon octicon-link"></span></a>With component</h3>
 
-<div class="highlight"><pre>component install pluma/sublish
+<div class="highlight highlight-sh"><pre>component install pluma/sublish
 </pre></div>
 
 <p><a href="https://github.com/component/component">Learn more about component</a>.</p>
 
-<h3>With bower</h3>
+<h3>
+<a name="with-bower" class="anchor" href="#with-bower"><span class="octicon octicon-link"></span></a>With bower</h3>
 
-<div class="highlight"><pre>bower install sublish
+<div class="highlight highlight-sh"><pre>bower install sublish
 </pre></div>
 
 <p><a href="https://github.com/twitter/bower">Learn more about bower</a>.</p>
 
-<h3>With a CommonJS module loader</h3>
+<h3>
+<a name="with-a-commonjs-module-loader" class="anchor" href="#with-a-commonjs-module-loader"><span class="octicon octicon-link"></span></a>With a CommonJS module loader</h3>
 
 <p>Download the <a href="https://raw.github.com/pluma/sublish/master/dist/sublish.min.js">latest minified CommonJS release</a> and add it to your project.</p>
 
 <p><a href="http://wiki.commonjs.org/wiki/Modules/1.1">Learn more about CommonJS modules</a>.</p>
 
-<h3>With an AMD module loader</h3>
+<h3>
+<a name="with-an-amd-module-loader" class="anchor" href="#with-an-amd-module-loader"><span class="octicon octicon-link"></span></a>With an AMD module loader</h3>
 
 <p>Download the <a href="https://raw.github.com/pluma/sublish/master/dist/sublish.amd.min.js">latest minified AMD release</a> and add it to your project.</p>
 
 <p><a href="http://requirejs.org/docs/whyamd.html">Learn more about AMD modules</a>.</p>
 
-<h3>As a standalone library</h3>
+<h3>
+<a name="as-a-standalone-library" class="anchor" href="#as-a-standalone-library"><span class="octicon octicon-link"></span></a>As a standalone library</h3>
 
 <p>Download the <a href="https://raw.github.com/pluma/sublish/master/dist/sublish.globals.min.js">latest minified standalone release</a> and add it to your project.</p>
 
-<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/your/js/path/sublish.globals.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/your/js/path/sublish.globals.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
 
 <p>This makes the <code>sublish</code> module available in the global namespace.</p>
 
-<h1>Basic usage example</h1>
+<h1>
+<a name="basic-usage-example" class="anchor" href="#basic-usage-example"><span class="octicon octicon-link"></span></a>Basic usage example</h1>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">myPubSub</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sublish</span><span class="p">.</span><span class="nx">PubSub</span><span class="p">();</span>
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">myPubSub</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sublish</span><span class="p">.</span><span class="nx">PubSub</span><span class="p">();</span>
 
 <span class="nx">myPubSub</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'myPubSub says: "'</span> <span class="o">+</span> <span class="nx">message</span> <span class="o">+</span> <span class="s1">'"'</span><span class="p">);</span>
@@ -102,10 +118,11 @@ make <span class="o">&amp;&amp;</span> make dist
 <span class="c1">// -&gt; 'myPubSub says: "something amazing"'</span>
 </pre></div>
 
-<h1>Mixin usage example with <a href="https://github.com/pluma/mixed">mixed</a>
+<h1>
+<a name="mixin-usage-example-with-mixed" class="anchor" href="#mixin-usage-example-with-mixed"><span class="octicon octicon-link"></span></a>Mixin usage example with <a href="https://github.com/pluma/mixed">mixed</a>
 </h1>
 
-<div class="highlight"><pre><span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight highlight-javascript"><pre><span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
@@ -126,38 +143,49 @@ make <span class="o">&amp;&amp;</span> make dist
 <span class="c1">// -&gt; 'Joe says: "Hello there!"</span>
 </pre></div>
 
-<h1>API</h1>
+<h1>
+<a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>API</h1>
 
-<h2>new PubSub()</h2>
+<h2>
+<a name="new-pubsub" class="anchor" href="#new-pubsub"><span class="octicon octicon-link"></span></a>new PubSub()</h2>
 
 <p>Creates a new PubSub instance.</p>
 
 <p><strong>NOTE:</strong> This is a constructor. Use of the <code>new</code> keyword is therefore not optional.</p>
 
-<h2>PubSub#subscribe(callback:Function)</h2>
+<h2>
+<a name="pubsubsubscribecallbackfunction" class="anchor" href="#pubsubsubscribecallbackfunction"><span class="octicon octicon-link"></span></a>PubSub#subscribe(callback:Function)</h2>
 
 <p>Adds the given callback function to this object's list of subscribers.</p>
 
 <p><strong>NOTE</strong>: The callback will be called with the PubSub instance as its context. If you want to preserve the callback's original context, use <code>Function#bind</code> or (in legacy browsers) wrap the callback in a closure.</p>
 
-<h2>PubSub#unsubscribe(callback:Function)</h2>
+<h2>
+<a name="pubsubunsubscribecallbackfunction" class="anchor" href="#pubsubunsubscribecallbackfunction"><span class="octicon octicon-link"></span></a>PubSub#unsubscribe(callback:Function)</h2>
 
 <p>Removes the given callback function from this object's list of subscribers.</p>
 
-<h2>PubSub#publish(args…)</h2>
+<h2>
+<a name="pubsubpublishargs" class="anchor" href="#pubsubpublishargs"><span class="octicon octicon-link"></span></a>PubSub#publish(args…)</h2>
 
 <p>Publishes the given arguments as a message. Every callback function in this object's list of subscribers will be called sequentially with the given messages as its arguments.</p>
 
-<h1>License</h1>
+<h1>
+<a name="unlicense" class="anchor" href="#unlicense"><span class="octicon octicon-link"></span></a>Unlicense</h1>
 
-<p>The MIT/Expat license.</p>
+<p>This is free and unencumbered public domain software. For more information, see <a href="http://unlicense.org/">http://unlicense.org/</a> or the accompanying <a href="https://github.com/pluma/sublish/blob/master/UNLICENSE">UNLICENSE</a> file.</p>
       </section>
     </div>
-    <footer>
-      <p>Project maintained by <a href="https://github.com/pluma">pluma</a></p>
-      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">sublish maintained by <a href="https://github.com/pluma">pluma</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
     
+
   </body>
 </html>
