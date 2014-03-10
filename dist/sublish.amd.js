@@ -1,4 +1,4 @@
-/*! sublish 0.4.5 Original author Alan Plum <me@pluma.io>. Released into the Public Domain under the UNLICENSE. @preserve */
+/*! sublish 0.4.6 Original author Alan Plum <me@pluma.io>. Released into the Public Domain under the UNLICENSE. @preserve */
 define(function(require, exports) {
 function PubSub() {
     this._subscribers = [];
