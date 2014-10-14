@@ -1,9 +1,9 @@
 {
   "name": "sublish",
   "repo": "pluma/sublish",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Minimalist publish/subscribe.",
-  "license": "UNLICENSE",
+  "license": "MIT",
   "keywords": [
     "pubsub",
     "publish",

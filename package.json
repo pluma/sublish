@@ -1,11 +1,11 @@
 {
   "name": "sublish",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Alan Plum <me@pluma.io>",
   "description": "Minimalist publish/subscribe.",
   "licenses": {
-    "type": "UNLICENSE",
-    "url": "https://github.com/pluma/sublish/blob/master/UNLICENSE"
+    "type": "MIT",
+    "url": "https://github.com/pluma/sublish/blob/master/LICENSE"
   },
   "repository": {
     "type": "git",
