@@ -4,6 +4,6 @@ node_js:
     - "0.8"
     - "0.6"
 before_install:
-  - npm update -g
+  - npm update -g npm@2 npm-registry-client@3 npmconf@2
 after_script:
   - npm run coveralls
