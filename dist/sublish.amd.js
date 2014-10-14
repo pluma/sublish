@@ -1,26 +1,35 @@
-/*! sublish 0.4.6 Original author Alan Plum <me@pluma.io>. Released into the Public Domain under the UNLICENSE. @preserve */
-define(function(require, exports) {
+define(function(require, exports, module) {
+/*jshint es3: true */
+/*global module */
 function PubSub() {
-    this._subscribers = [];
+  'use strict';
+  if (!(this instanceof PubSub)) return new PubSub();
+  this._listeners = [];
 }
 PubSub.prototype = {
-    subscribe: function(callback) {
-        this._subscribers.push(callback);
-    },
-    unsubscribe: function(callback) {
-        for (var i = 0; i < this._subscribers.length; i++) {
-            if (this._subscribers[i] === callback) {
-                this._subscribers.splice(i, 1);
-                return true;
-            }
-        }
-        return false;
-    },
-    publish: function() {
-        var args = Array.prototype.slice.call(arguments, 0);
-        for (var i = 0; i < this._subscribers.length; i++) {
-            this._subscribers[i].apply(this, args);
-        }
+  listen: function(fn, ctx) {
+    'use strict';
+    var self = this;
+    function callback() {
+      return fn.apply(ctx || self, arguments);
     }
+    this._listeners.push(callback);
+    return function() {
+      for (var i = 0; i < self._listeners.length; i++) {
+        if (self._listeners[i] !== callback) continue;
+        self._listeners.splice(i, 1);
+        return true;
+      }
+      return false;
+    };
+  },
+  emit: function() {
+    'use strict';
+    var args = Array.prototype.slice.call(arguments, 0);
+    for (var i = 0; i < this._listeners.length; i++) {
+      this._listeners[i].apply(this, args);
+    }
+  }
 };
-exports.PubSub = PubSub;return exports;});
+module.exports = PubSub;
+});

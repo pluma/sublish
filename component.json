@@ -1,7 +1,7 @@
 {
   "name": "sublish",
   "repo": "pluma/sublish",
-  "version": "0.4.6",
+  "version": "1.0.0",
   "description": "Minimalist publish/subscribe.",
   "license": "UNLICENSE",
   "keywords": [

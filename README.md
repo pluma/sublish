@@ -1,9 +1,8 @@
 # Synopsis
 
-**sublish** is a minimalist lightweight (504 Bytes minified and 297 Bytes gzipped) implementation of publish/subscribe.
+**sublish** is a minimalist lightweight (592 Bytes minified and 430 Bytes gzipped) implementation of publish/subscribe.
 
-[![stability 3 - stable](http://b.repl.ca/v1/stability-3_--_stable-yellowgreen.png)
-](http://nodejs.org/api/documentation.html#documentation_stability_index) [![license - Unlicense](http://b.repl.ca/v1/license-Unlicense-lightgrey.png)](http://unlicense.org/) [![Flattr this](https://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=pluma&url=https://github.com/pluma/sublish)
+[![license - MIT](http://b.repl.ca/v1/license-MIT-blue.png)](http://pluma.mit-license.org) [![Flattr this](https://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=pluma&url=https://github.com/pluma/sublish)
 
 [![browser support](https://ci.testling.com/pluma/sublish.png)](https://ci.testling.com/pluma/sublish)
 
@@ -27,7 +26,7 @@ npm install sublish
 git clone https://github.com/pluma/sublish.git
 cd sublish
 npm install
-make && make dist
+npm run test && npm run dist
 ```
 
 ## Browser
@@ -73,63 +72,60 @@ This makes the `sublish` module available in the global namespace.
 # Basic usage example
 
 ```javascript
-var myPubSub = new sublish.PubSub();
+var myPubSub = require('sublish')();
 
-myPubSub.subscribe(function(message) {
+var unlisten = myPubSub.listen(function(message) {
   console.log('myPubSub says: "' + message + '"');
 });
 
-// elsewhere
-myPubSub.publish('something amazing');
+myPubSub.emit('something amazing');
 // -> 'myPubSub says: "something amazing"'
+
+unlisten();
+myPubSub.emit('the listener doesn\'t hear this');
+// -> nothing happens
 ```
 
-# Mixin usage example with [mixed](https://github.com/pluma/mixed)
+# Extending by inheritance
 
-```javascript
-function Person(name) {
-    this.name = name;
+```js
+var PubSub = require('sublish');
+var inherits = require('util').inherits;
+function MyFancyPubSub() {
+  PubSub.call(this);
 }
-Person.prototype = {
-    say: function(message) {
-        this.publish(this.name + ' says: "' + message + '"');
-    }
-};
+inherits(MyFancyPubSub, PubSub);
+```
 
-var joe = new Person('Joe');
-mixed.mixin(sublish.PubSub, joe);
+# Extending as a mixin
 
-joe.subscribe(function(message) {
-    console.log(message);
-});
-
-// elsewhere
-joe.say('Hello there!');
-// -> 'Joe says: "Hello there!"
+```js
+var PubSub = require('sublish');
+var extend = require('extend');
+function MyFancyPubSub() {
+  PubSub.call(this);
+}
+extend(MyFancyPubSub.prototype, PubSub.prototype);
 ```
 
 # API
 
 ## new PubSub()
 
-Creates a new PubSub instance.
+Creates a new PubSub instance. The `new` keyword is optional.
 
-**NOTE:** This is a constructor. Use of the `new` keyword is therefore not optional.
+## PubSub::listen(fn:Function, ctx:*):Function
 
-## PubSub#subscribe(callback:Function)
+Adds the given function to the instance's listeners.
 
-Adds the given callback function to this object's list of subscribers.
+Returns a function that can be called to unsubscribe the listener again.
 
-**NOTE**: The callback will be called with the PubSub instance as its context. If you want to preserve the callback's original context, use `Function#bind` or (in legacy browsers) wrap the callback in a closure.
+**Note:** the function will be invoked with its `this` context set to the given `ctx`. If `ctx` is false-y, the PubSub instance will be used instead.
 
-## PubSub#unsubscribe(callback:Function)
+## PubSub::emit(args…)
 
-Removes the given callback function from this object's list of subscribers.
+Publishes the given arguments as a message. Every callback function in this object's list of listeners will be called sequentially with the given messages as its arguments.
 
-## PubSub#publish(args…)
+# License
 
-Publishes the given arguments as a message. Every callback function in this object's list of subscribers will be called sequentially with the given messages as its arguments.
-
-# Unlicense
-
-This is free and unencumbered public domain software. For more information, see http://unlicense.org/ or the accompanying [UNLICENSE](https://github.com/pluma/sublish/blob/master/UNLICENSE) file.
+The MIT/Expat license. For more information, see http://pluma.mit-license.org/ or the accompanying [LICENSE](https://github.com/pluma/sublish/blob/master/LICENSE) file.
