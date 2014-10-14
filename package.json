@@ -1,6 +1,6 @@
 {
   "name": "sublish",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Alan Plum <me@pluma.io>",
   "description": "Minimalist publish/subscribe.",
   "licenses": {
@@ -17,7 +17,8 @@
     "subscribe",
     "events"
   ],
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "coveralls": "^2.11.2",
     "expect.js": "^0.3.1",
     "istanbul": "^0.3.2",
@@ -25,7 +26,6 @@
     "mocha": "^1.21.5",
     "uglify-js": "^2.4.15"
   },
-  "devDependencies": {},
   "main": "./index.js",
   "scripts": {
     "lint": "jshint index.js test",
