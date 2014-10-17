@@ -78,11 +78,11 @@ describe('PubSub', function() {
       pubsub = new PubSub();
       subscriber1.timesCalled = 0;
       subscriber2.timesCalled = 0;
-      var unsubscribe = pubsub.subscribe(subscriber1);
+      pubsub.subscribe(subscriber1);
       callback1 = pubsub._subscribers[pubsub._subscribers.length - 1];
       pubsub.subscribe(subscriber2);
       callback2 = pubsub._subscribers[pubsub._subscribers.length - 1];
-      result = unsubscribe();
+      result = pubsub.unsubscribe(subscriber1);
     });
     it('returns true', function() {
       expect(result).to.equal(true);
@@ -103,13 +103,13 @@ describe('PubSub', function() {
     it('returns false', function() {
       var pubsub = new PubSub();
       var subscriber = function() {};
-      var nonListener = function() {};
+      var nonSubscriber = function() {};
       var result;
       pubsub.subscribe(subscriber);
       var callback = pubsub._subscribers[pubsub._subscribers.length - 1];
-      var unsubscribe = pubsub.subscribe(nonListener);
-      unsubscribe();
-      result = unsubscribe();
+      pubsub.subscribe(nonSubscriber);
+      pubsub.unsubscribe(nonSubscriber);
+      result = pubsub.unsubscribe(nonSubscriber);
       expect(result).to.equal(false);
       expect(pubsub._subscribers).to.only.contain(callback);
     });

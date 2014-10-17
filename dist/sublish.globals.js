@@ -18,14 +18,6 @@ PubSub.prototype = {
     callback.fn = fn;
     callback.ctx = ctx;
     this._subscribers.push(callback);
-    return function() {
-      for (var i = 0; i < self._subscribers.length; i++) {
-        if (self._subscribers[i] !== callback) continue;
-        self._subscribers.splice(i, 1);
-        return true;
-      }
-      return false;
-    };
   },
   unsubscribe: function (fn, ctx) {
     'use strict';
@@ -45,5 +37,6 @@ PubSub.prototype = {
   }
 };
 module.exports = PubSub;
+
 root.sublish = module.exports;
 }(this));

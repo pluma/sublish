@@ -1,6 +1,6 @@
 # Synopsis
 
-**sublish** is a minimalist lightweight (592 Bytes minified and 430 Bytes gzipped) implementation of publish/subscribe.
+**sublish** is a minimalist lightweight (697 Bytes minified and 449 Bytes gzipped) implementation of publish/subscribe.
 
 [![license - MIT](http://b.repl.ca/v1/license-MIT-blue.png)](http://pluma.mit-license.org) [![Flattr this](https://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=pluma&url=https://github.com/pluma/sublish)
 
@@ -74,14 +74,15 @@ This makes the `sublish` module available in the global namespace.
 ```javascript
 var myPubSub = require('sublish')();
 
-var unsubscribe = myPubSub.subscribe(function(message) {
+var listener = function(message) {
   console.log('myPubSub says: "' + message + '"');
 });
 
+myPubSub.subscribe(listener);
 myPubSub.publish('something amazing');
 // -> 'myPubSub says: "something amazing"'
 
-unsubscribe();
+myPubSub.unsubscribe(listener);
 myPubSub.publish('talking to myself');
 // -> nothing happens
 ```
@@ -117,8 +118,6 @@ Creates a new PubSub instance. The `new` keyword is optional.
 ## PubSub::subscribe(fn:Function, ctx:*):Function
 
 Adds the given function to the instance's subscribers.
-
-Returns a function that can be called to unsubscribe the subscriber again.
 
 **Note:** the function will be invoked with its `this` context set to the given `ctx`. If `ctx` is false-y, the PubSub instance will be used instead.
 
