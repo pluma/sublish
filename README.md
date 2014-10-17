@@ -74,15 +74,15 @@ This makes the `sublish` module available in the global namespace.
 ```javascript
 var myPubSub = require('sublish')();
 
-var unlisten = myPubSub.listen(function(message) {
+var unsubscribe = myPubSub.subscribe(function(message) {
   console.log('myPubSub says: "' + message + '"');
 });
 
-myPubSub.emit('something amazing');
+myPubSub.publish('something amazing');
 // -> 'myPubSub says: "something amazing"'
 
-unlisten();
-myPubSub.emit('the listener doesn\'t hear this');
+unsubscribe();
+myPubSub.publish('talking to myself');
 // -> nothing happens
 ```
 
@@ -114,17 +114,17 @@ extend(MyFancyPubSub.prototype, PubSub.prototype);
 
 Creates a new PubSub instance. The `new` keyword is optional.
 
-## PubSub::listen(fn:Function, ctx:*):Function
+## PubSub::subscribe(fn:Function, ctx:*):Function
 
-Adds the given function to the instance's listeners.
+Adds the given function to the instance's subscribers.
 
-Returns a function that can be called to unsubscribe the listener again.
+Returns a function that can be called to unsubscribe the subscriber again.
 
 **Note:** the function will be invoked with its `this` context set to the given `ctx`. If `ctx` is false-y, the PubSub instance will be used instead.
 
-## PubSub::emit(args…)
+## PubSub::publish(args…)
 
-Publishes the given arguments as a message. Every callback function in this object's list of listeners will be called sequentially with the given messages as its arguments.
+Publishes the given arguments as a message. Every callback function in this object's list of subscribers will be called sequentially with the given messages as its arguments.
 
 # License
 
