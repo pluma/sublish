@@ -122,6 +122,12 @@ Returns a function that can be called to unsubscribe the subscriber again.
 
 **Note:** the function will be invoked with its `this` context set to the given `ctx`. If `ctx` is false-y, the PubSub instance will be used instead.
 
+## PubSub::unsubscribe(fn:Function, ctx:*):Boolean
+
+Removes the given function from the instance's subscribers.
+
+Returns `true` if the subscriber exists, `false` otherwise.
+
 ## PubSub::publish(args…)
 
 Publishes the given arguments as a message. Every callback function in this object's list of subscribers will be called sequentially with the given messages as its arguments.

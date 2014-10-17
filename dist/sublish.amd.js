@@ -4,30 +4,41 @@ define(function(require, exports, module) {
 function PubSub() {
   'use strict';
   if (!(this instanceof PubSub)) return new PubSub();
-  this._listeners = [];
+  this._subscribers = [];
 }
 PubSub.prototype = {
-  listen: function(fn, ctx) {
+  subscribe: function(fn, ctx) {
     'use strict';
     var self = this;
     function callback() {
       return fn.apply(ctx || self, arguments);
     }
-    this._listeners.push(callback);
+    callback.fn = fn;
+    callback.ctx = ctx;
+    this._subscribers.push(callback);
     return function() {
-      for (var i = 0; i < self._listeners.length; i++) {
-        if (self._listeners[i] !== callback) continue;
-        self._listeners.splice(i, 1);
+      for (var i = 0; i < self._subscribers.length; i++) {
+        if (self._subscribers[i] !== callback) continue;
+        self._subscribers.splice(i, 1);
         return true;
       }
       return false;
     };
   },
-  emit: function() {
+  unsubscribe: function (fn, ctx) {
+    'use strict';
+    for (var i = 0; i < this._subscribers.length; i++) {
+      if (this._subscribers[i].fn !== fn || this._subscribers[i].ctx !== ctx) continue;
+      this._subscribers.splice(i, 1);
+      return true;
+    }
+    return false;
+  },
+  publish: function() {
     'use strict';
     var args = Array.prototype.slice.call(arguments, 0);
-    for (var i = 0; i < this._listeners.length; i++) {
-      this._listeners[i].apply(this, args);
+    for (var i = 0; i < this._subscribers.length; i++) {
+      this._subscribers[i].apply(this, args);
     }
   }
 };
