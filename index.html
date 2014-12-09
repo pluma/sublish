@@ -2,9 +2,9 @@
 <html>
 
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="sublish : minimalist publish/subscribe" />
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="sublish : minimalist publish/subscribe">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -32,11 +32,11 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>
-<a name="synopsis" class="anchor" href="#synopsis"><span class="octicon octicon-link"></span></a>Synopsis</h1>
+<a id="synopsis" class="anchor" href="#synopsis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Synopsis</h1>
 
-<p><strong>sublish</strong> is a minimalist lightweight (504 Bytes minified and 297 Bytes gzipped) implementation of publish/subscribe.</p>
+<p><strong>sublish</strong> is a minimalist lightweight (663 Bytes minified and 336 Bytes gzipped) implementation of publish/subscribe.</p>
 
-<p><a href="http://nodejs.org/api/documentation.html#documentation_stability_index"><img src="http://b.repl.ca/v1/stability-3_--_stable-yellowgreen.png" alt="stability 3 - stable"></a> <a href="http://unlicense.org/"><img src="http://b.repl.ca/v1/license-Unlicense-lightgrey.png" alt="license - Unlicense"></a> <a href="https://flattr.com/submit/auto?user_id=pluma&amp;url=https://github.com/pluma/sublish"><img src="https://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this"></a></p>
+<p><a href="http://pluma.mit-license.org"><img src="http://b.repl.ca/v1/license-MIT-blue.png" alt="license - MIT"></a> <a href="https://flattr.com/submit/auto?user_id=pluma&amp;url=https://github.com/pluma/sublish"><img src="https://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this"></a></p>
 
 <p><a href="https://ci.testling.com/pluma/sublish"><img src="https://ci.testling.com/pluma/sublish.png" alt="browser support"></a></p>
 
@@ -45,139 +45,132 @@
 <p><a href="https://npmjs.org/package/sublish"><img src="https://nodei.co/npm/sublish.png?compact=true" alt="NPM status"></a></p>
 
 <h1>
-<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h1>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h1>
 
 <h2>
-<a name="nodejs" class="anchor" href="#nodejs"><span class="octicon octicon-link"></span></a>Node.js</h2>
+<a id="nodejs" class="anchor" href="#nodejs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Node.js</h2>
 
 <h3>
-<a name="with-npm" class="anchor" href="#with-npm"><span class="octicon octicon-link"></span></a>With NPM</h3>
+<a id="with-npm" class="anchor" href="#with-npm" aria-hidden="true"><span class="octicon octicon-link"></span></a>With NPM</h3>
 
-<div class="highlight highlight-sh"><pre>npm install sublish
-</pre></div>
+<div class="highlight highlight-sh"><pre>npm install sublish</pre></div>
 
 <h3>
-<a name="from-source" class="anchor" href="#from-source"><span class="octicon octicon-link"></span></a>From source</h3>
+<a id="from-source" class="anchor" href="#from-source" aria-hidden="true"><span class="octicon octicon-link"></span></a>From source</h3>
 
 <div class="highlight highlight-sh"><pre>git clone https://github.com/pluma/sublish.git
-<span class="nb">cd </span>sublish
+<span class="pl-s3">cd</span> sublish
 npm install
-make <span class="o">&amp;&amp;</span> make dist
-</pre></div>
+npm run <span class="pl-s3">test</span> <span class="pl-k">&amp;&amp;</span> npm run dist</pre></div>
 
 <h2>
-<a name="browser" class="anchor" href="#browser"><span class="octicon octicon-link"></span></a>Browser</h2>
+<a id="browser" class="anchor" href="#browser" aria-hidden="true"><span class="octicon octicon-link"></span></a>Browser</h2>
 
 <h3>
-<a name="with-component" class="anchor" href="#with-component"><span class="octicon octicon-link"></span></a>With component</h3>
+<a id="with-component" class="anchor" href="#with-component" aria-hidden="true"><span class="octicon octicon-link"></span></a>With component</h3>
 
-<div class="highlight highlight-sh"><pre>component install pluma/sublish
-</pre></div>
+<div class="highlight highlight-sh"><pre>component install pluma/sublish</pre></div>
 
 <p><a href="https://github.com/component/component">Learn more about component</a>.</p>
 
 <h3>
-<a name="with-bower" class="anchor" href="#with-bower"><span class="octicon octicon-link"></span></a>With bower</h3>
+<a id="with-bower" class="anchor" href="#with-bower" aria-hidden="true"><span class="octicon octicon-link"></span></a>With bower</h3>
 
-<div class="highlight highlight-sh"><pre>bower install sublish
-</pre></div>
+<div class="highlight highlight-sh"><pre>bower install sublish</pre></div>
 
 <p><a href="https://github.com/twitter/bower">Learn more about bower</a>.</p>
 
 <h3>
-<a name="with-a-commonjs-module-loader" class="anchor" href="#with-a-commonjs-module-loader"><span class="octicon octicon-link"></span></a>With a CommonJS module loader</h3>
+<a id="with-a-commonjs-module-loader" class="anchor" href="#with-a-commonjs-module-loader" aria-hidden="true"><span class="octicon octicon-link"></span></a>With a CommonJS module loader</h3>
 
 <p>Download the <a href="https://raw.github.com/pluma/sublish/master/dist/sublish.min.js">latest minified CommonJS release</a> and add it to your project.</p>
 
 <p><a href="http://wiki.commonjs.org/wiki/Modules/1.1">Learn more about CommonJS modules</a>.</p>
 
 <h3>
-<a name="with-an-amd-module-loader" class="anchor" href="#with-an-amd-module-loader"><span class="octicon octicon-link"></span></a>With an AMD module loader</h3>
+<a id="with-an-amd-module-loader" class="anchor" href="#with-an-amd-module-loader" aria-hidden="true"><span class="octicon octicon-link"></span></a>With an AMD module loader</h3>
 
 <p>Download the <a href="https://raw.github.com/pluma/sublish/master/dist/sublish.amd.min.js">latest minified AMD release</a> and add it to your project.</p>
 
 <p><a href="http://requirejs.org/docs/whyamd.html">Learn more about AMD modules</a>.</p>
 
 <h3>
-<a name="as-a-standalone-library" class="anchor" href="#as-a-standalone-library"><span class="octicon octicon-link"></span></a>As a standalone library</h3>
+<a id="as-a-standalone-library" class="anchor" href="#as-a-standalone-library" aria-hidden="true"><span class="octicon octicon-link"></span></a>As a standalone library</h3>
 
 <p>Download the <a href="https://raw.github.com/pluma/sublish/master/dist/sublish.globals.min.js">latest minified standalone release</a> and add it to your project.</p>
 
-<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/your/js/path/sublish.globals.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span>/your/js/path/sublish.globals.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
 
 <p>This makes the <code>sublish</code> module available in the global namespace.</p>
 
 <h1>
-<a name="basic-usage-example" class="anchor" href="#basic-usage-example"><span class="octicon octicon-link"></span></a>Basic usage example</h1>
+<a id="basic-usage-example" class="anchor" href="#basic-usage-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic usage example</h1>
 
-<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">myPubSub</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sublish</span><span class="p">.</span><span class="nx">PubSub</span><span class="p">();</span>
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> myPubSub <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>sublish<span class="pl-pds">'</span></span>)();
 
-<span class="nx">myPubSub</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'myPubSub says: "'</span> <span class="o">+</span> <span class="nx">message</span> <span class="o">+</span> <span class="s1">'"'</span><span class="p">);</span>
-<span class="p">});</span>
+<span class="pl-s">var</span> <span class="pl-en">listener</span> <span class="pl-k">=</span> <span class="pl-st">function</span>(<span class="pl-vpf">message</span>) {
+  <span class="pl-en">console</span><span class="pl-s3">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>myPubSub says: "<span class="pl-pds">'</span></span> <span class="pl-k">+</span> message <span class="pl-k">+</span> <span class="pl-s1"><span class="pl-pds">'</span>"<span class="pl-pds">'</span></span>);
+});
 
-<span class="c1">// elsewhere</span>
-<span class="nx">myPubSub</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="s1">'something amazing'</span><span class="p">);</span>
-<span class="c1">// -&gt; 'myPubSub says: "something amazing"'</span>
-</pre></div>
+myPubSub.subscribe(listener);
+myPubSub.publish(<span class="pl-s1"><span class="pl-pds">'</span>something amazing<span class="pl-pds">'</span></span>);
+<span class="pl-c">// -&gt; 'myPubSub says: "something amazing"'</span>
 
-<h1>
-<a name="mixin-usage-example-with-mixed" class="anchor" href="#mixin-usage-example-with-mixed"><span class="octicon octicon-link"></span></a>Mixin usage example with <a href="https://github.com/pluma/mixed">mixed</a>
-</h1>
-
-<div class="highlight highlight-javascript"><pre><span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">say</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">' says: "'</span> <span class="o">+</span> <span class="nx">message</span> <span class="o">+</span> <span class="s1">'"'</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="kd">var</span> <span class="nx">joe</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s1">'Joe'</span><span class="p">);</span>
-<span class="nx">mixed</span><span class="p">.</span><span class="nx">mixin</span><span class="p">(</span><span class="nx">sublish</span><span class="p">.</span><span class="nx">PubSub</span><span class="p">,</span> <span class="nx">joe</span><span class="p">);</span>
-
-<span class="nx">joe</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
-<span class="p">});</span>
-
-<span class="c1">// elsewhere</span>
-<span class="nx">joe</span><span class="p">.</span><span class="nx">say</span><span class="p">(</span><span class="s1">'Hello there!'</span><span class="p">);</span>
-<span class="c1">// -&gt; 'Joe says: "Hello there!"</span>
-</pre></div>
+myPubSub.unsubscribe(listener);
+myPubSub.publish(<span class="pl-s1"><span class="pl-pds">'</span>talking to myself<span class="pl-pds">'</span></span>);
+<span class="pl-c">// -&gt; nothing happens</span></pre></div>
 
 <h1>
-<a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>API</h1>
+<a id="extending-by-inheritance" class="anchor" href="#extending-by-inheritance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Extending by inheritance</h1>
+
+<div class="highlight highlight-js"><pre><span class="pl-s">var</span> PubSub <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>sublish<span class="pl-pds">'</span></span>).PubSub;
+<span class="pl-s">var</span> inherits <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>util<span class="pl-pds">'</span></span>).inherits;
+<span class="pl-st">function</span> <span class="pl-en">MyFancyPubSub</span>() {
+  PubSub.<span class="pl-s3">call</span>(<span class="pl-v">this</span>);
+}
+inherits(MyFancyPubSub, PubSub);</pre></div>
+
+<h1>
+<a id="extending-as-a-mixin" class="anchor" href="#extending-as-a-mixin" aria-hidden="true"><span class="octicon octicon-link"></span></a>Extending as a mixin</h1>
+
+<div class="highlight highlight-js"><pre><span class="pl-s">var</span> PubSub <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>sublish<span class="pl-pds">'</span></span>).PubSub;
+<span class="pl-s">var</span> extend <span class="pl-k">=</span> <span class="pl-s3">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>extend<span class="pl-pds">'</span></span>);
+<span class="pl-st">function</span> <span class="pl-en">MyFancyPubSub</span>() {
+  PubSub.<span class="pl-s3">call</span>(<span class="pl-v">this</span>);
+}
+extend(MyFancyPubSub.<span class="pl-sc">prototype</span>, PubSub.<span class="pl-sc">prototype</span>);</pre></div>
+
+<h1>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span class="octicon octicon-link"></span></a>API</h1>
 
 <h2>
-<a name="new-pubsub" class="anchor" href="#new-pubsub"><span class="octicon octicon-link"></span></a>new PubSub()</h2>
+<a id="new-pubsub" class="anchor" href="#new-pubsub" aria-hidden="true"><span class="octicon octicon-link"></span></a>new PubSub()</h2>
 
 <p>Creates a new PubSub instance.</p>
 
-<p><strong>NOTE:</strong> This is a constructor. Use of the <code>new</code> keyword is therefore not optional.</p>
+<h2>
+<a id="pubsubsubscribefnfunction-ctxfunction" class="anchor" href="#pubsubsubscribefnfunction-ctxfunction" aria-hidden="true"><span class="octicon octicon-link"></span></a>pubsub.subscribe(fn:Function, ctx:*):Function</h2>
+
+<p>Adds the given function to the instance's subscribers.</p>
+
+<p><strong>Note:</strong> the function will be invoked with its <code>this</code> context set to the given <code>ctx</code>. If <code>ctx</code> is false-y, the PubSub instance will be used instead.</p>
 
 <h2>
-<a name="pubsubsubscribecallbackfunction" class="anchor" href="#pubsubsubscribecallbackfunction"><span class="octicon octicon-link"></span></a>PubSub#subscribe(callback:Function)</h2>
+<a id="pubsubunsubscribefnfunction-ctxboolean" class="anchor" href="#pubsubunsubscribefnfunction-ctxboolean" aria-hidden="true"><span class="octicon octicon-link"></span></a>pubsub.unsubscribe(fn:Function, ctx:*):Boolean</h2>
 
-<p>Adds the given callback function to this object's list of subscribers.</p>
+<p>Removes the given function from the instance's subscribers.</p>
 
-<p><strong>NOTE</strong>: The callback will be called with the PubSub instance as its context. If you want to preserve the callback's original context, use <code>Function#bind</code> or (in legacy browsers) wrap the callback in a closure.</p>
-
-<h2>
-<a name="pubsubunsubscribecallbackfunction" class="anchor" href="#pubsubunsubscribecallbackfunction"><span class="octicon octicon-link"></span></a>PubSub#unsubscribe(callback:Function)</h2>
-
-<p>Removes the given callback function from this object's list of subscribers.</p>
+<p>Returns <code>true</code> if the subscriber exists, <code>false</code> otherwise.</p>
 
 <h2>
-<a name="pubsubpublishargs" class="anchor" href="#pubsubpublishargs"><span class="octicon octicon-link"></span></a>PubSub#publish(args…)</h2>
+<a id="pubsubpublishargs" class="anchor" href="#pubsubpublishargs" aria-hidden="true"><span class="octicon octicon-link"></span></a>pubsub.publish(args…)</h2>
 
 <p>Publishes the given arguments as a message. Every callback function in this object's list of subscribers will be called sequentially with the given messages as its arguments.</p>
 
 <h1>
-<a name="unlicense" class="anchor" href="#unlicense"><span class="octicon octicon-link"></span></a>Unlicense</h1>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h1>
 
-<p>This is free and unencumbered public domain software. For more information, see <a href="http://unlicense.org/">http://unlicense.org/</a> or the accompanying <a href="https://github.com/pluma/sublish/blob/master/UNLICENSE">UNLICENSE</a> file.</p>
+<p>The MIT/Expat license. For more information, see <a href="http://pluma.mit-license.org/">http://pluma.mit-license.org/</a> or the accompanying <a href="https://github.com/pluma/sublish/blob/master/LICENSE">LICENSE</a> file.</p>
       </section>
     </div>
 
