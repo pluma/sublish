@@ -2,7 +2,7 @@
 
 **sublish** is a minimalist lightweight (663 Bytes minified and 336 Bytes gzipped) implementation of publish/subscribe.
 
-[![license - MIT](http://b.repl.ca/v1/license-MIT-blue.png)](http://pluma.mit-license.org) [![Flattr this](https://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=pluma&url=https://github.com/pluma/sublish)
+[![license - MIT](https://img.shields.io/npm/l/sublish.svg)](http://pluma.mit-license.org) [![Flattr this](https://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=pluma&url=https://github.com/pluma/sublish)
 
 [![browser support](https://ci.testling.com/pluma/sublish.png)](https://ci.testling.com/pluma/sublish)
 
