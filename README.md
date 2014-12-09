@@ -1,6 +1,6 @@
 # Synopsis
 
-**sublish** is a minimalist lightweight (697 Bytes minified and 449 Bytes gzipped) implementation of publish/subscribe.
+**sublish** is a minimalist lightweight (663 Bytes minified and 336 Bytes gzipped) implementation of publish/subscribe.
 
 [![license - MIT](http://b.repl.ca/v1/license-MIT-blue.png)](http://pluma.mit-license.org) [![Flattr this](https://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=pluma&url=https://github.com/pluma/sublish)
 
@@ -90,7 +90,7 @@ myPubSub.publish('talking to myself');
 # Extending by inheritance
 
 ```js
-var PubSub = require('sublish');
+var PubSub = require('sublish').PubSub;
 var inherits = require('util').inherits;
 function MyFancyPubSub() {
   PubSub.call(this);
@@ -101,7 +101,7 @@ inherits(MyFancyPubSub, PubSub);
 # Extending as a mixin
 
 ```js
-var PubSub = require('sublish');
+var PubSub = require('sublish').PubSub;
 var extend = require('extend');
 function MyFancyPubSub() {
   PubSub.call(this);
@@ -113,21 +113,21 @@ extend(MyFancyPubSub.prototype, PubSub.prototype);
 
 ## new PubSub()
 
-Creates a new PubSub instance. The `new` keyword is optional.
+Creates a new PubSub instance.
 
-## PubSub::subscribe(fn:Function, ctx:*):Function
+## pubsub.subscribe(fn:Function, ctx:*):Function
 
 Adds the given function to the instance's subscribers.
 
 **Note:** the function will be invoked with its `this` context set to the given `ctx`. If `ctx` is false-y, the PubSub instance will be used instead.
 
-## PubSub::unsubscribe(fn:Function, ctx:*):Boolean
+## pubsub.unsubscribe(fn:Function, ctx:*):Boolean
 
 Removes the given function from the instance's subscribers.
 
 Returns `true` if the subscriber exists, `false` otherwise.
 
-## PubSub::publish(args…)
+## pubsub.publish(args…)
 
 Publishes the given arguments as a message. Every callback function in this object's list of subscribers will be called sequentially with the given messages as its arguments.
 

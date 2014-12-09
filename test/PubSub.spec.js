@@ -1,5 +1,6 @@
 /*jshint node: true */
 /*global describe, it, beforeEach */
+'use strict';
 var expect = require('expect.js');
 var PubSub = require('../');
 
